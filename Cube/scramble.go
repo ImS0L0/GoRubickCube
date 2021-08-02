@@ -92,7 +92,7 @@ func (C *Cube) MoveCube(scramble *[]string) {
 	lastLayer, _ := regexp.Compile(`[DRF]`)
 
 	wLayer, _ := regexp.Compile(`w`)
-	getWLayer, _ := regexp.Compile(`^\d?`)
+	getWLayer, _ := regexp.Compile(`^\d{0,2}`)
 
 	layerNum, nextLayerNum, times, prime := uint8(0), uint8(0), uint8(1), false
 
@@ -136,8 +136,6 @@ func (C *Cube) MoveCube(scramble *[]string) {
 		if lastLayer.MatchString(movement) {
 			layerNum = (C.width - 1) - layerNum
 			nextLayerNum = (C.width - 1) - nextLayerNum
-
-			// fmt.Println(layerNum, nextLayerNum)
 		}
 
 		if xLayer.MatchString(movement) {

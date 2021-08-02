@@ -48,8 +48,7 @@ func main() {
 	for {
 		clearTerminal()
 		fmt.Printf(Color.Yellow, "WELCOME!!\n\n")
-		fmt.Printf(Color.White, "Enter Cube size 2 to 10")
-		fmt.Printf(Color.Blue, " (or 25, it depend of a terminal size)")
+		fmt.Printf(Color.White, "Enter Cube size 2 to 12")
 		fmt.Printf(Color.Red, " (type \"exit\" to leave)")
 		fmt.Printf(Color.Red, msg)
 		fmt.Printf(Color.Blue, "\n ƒ: ")

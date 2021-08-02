@@ -24,8 +24,8 @@ type Cube struct {
 
 func (C *Cube) New(width uint8) {
 
-	if width > 25 {
-		C.width = 25
+	if width > 12 {
+		C.width = 12
 	} else if width <= 0 {
 		C.width = 2
 	} else {
@@ -83,11 +83,15 @@ func (C *Cube) AutoScramble() {
 		scrambleLen = rand.Intn(4) + 18
 	}
 
-	if C.width > 3 {
+	if C.width > 3 && C.width < 12 {
 		scrambleLen = 0
 		for i := uint8(0); i < C.width; i++ {
 			scrambleLen += rand.Intn(1+int(i)) + (9 + int(i))
 		}
+	}
+
+	if C.width > 11 {
+		scrambleLen = 205
 	}
 
 	C.CreateScramble(uint8(scrambleLen))
