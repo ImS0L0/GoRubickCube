@@ -25,6 +25,7 @@ func (C *Cube) CreateScramble(length uint8) {
 	beforeIndex, xIndex, yIndex, zIndex := -1, uint(0), uint(0), uint(0)
 
 	rand.Seed(time.Now().Unix())
+	C.scramble = []string{}
 
 	for i := uint8(0); i < length; i++ {
 		for {
@@ -176,7 +177,7 @@ func (C *Cube) MoveCube(scramble *[]string) {
 				C.MoveZLayer(&layerNum, &times, &prime)
 			}
 		} else {
-			fmt.Println("invalid Scrable")
+			// fmt.Println("invalid Scrable")
 			return
 		}
 		layerNum, nextLayerNum, times, prime = uint8(0), uint8(0), uint8(1), false

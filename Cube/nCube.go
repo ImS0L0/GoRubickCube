@@ -35,10 +35,14 @@ func (C *Cube) New(width uint8) {
 	C.voidFace.New(&C.width, 0)
 	C.faceUp.New(&C.width, 1)
 	C.faceDown.New(&C.width, 2)
-	C.faceRight.New(&C.width, 3)
-	C.faceLeft.New(&C.width, 4)
+	C.faceLeft.New(&C.width, 3)
+	C.faceRight.New(&C.width, 4)
 	C.faceFront.New(&C.width, 5)
 	C.faceBack.New(&C.width, 6)
+}
+
+func (C *Cube) GetScramble() []string {
+	return C.scramble
 }
 
 func (C *Cube) PrintCube() {
